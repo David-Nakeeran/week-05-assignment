@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Logo</h1>
+    </header>
+    <main>
+      <form>
+        <fieldset>
+          <legend>Hotel Reservation</legend>
+
+          <label for="customer_name">First name</label>
+          <input type="text" name="customer_name" required />
+          <label for="customer_phone">Phone</label>
+          <input type="phone" name="customer_phone" required />
+          <label for="customer_email">customer email</label>
+          <input type="email" name="customer_email" required />
+          <label for="check_in">Check in</label>
+          <input type="date" name="check_in" required />
+
+          <label for="check_out">Check out</label>
+          <input type="date" name="check_out" required />
+
+          <label for="booking_notes">Booking notes</label>
+          <input type="text" name="booking_notes" required />
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </main>
+    <footer>All rights reserved!!!</footer>
+  </body>
+</html>
