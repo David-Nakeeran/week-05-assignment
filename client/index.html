@@ -5,66 +5,113 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- <script type="module" src="./src/main.js" defer></script> -->
     <title>Home page</title>
   </head>
   <body>
     <header>
-      <h1>Logo</h1>
+      <h1>NORSTAY</h1>
     </header>
     <main>
-      <h2>Discover the best hotels in Norwich</h2>
-      <section>
-        <a href="./hotel-page.html">Hotel page</a>
+      <h2 class="main-title">Discover the best hotels in Norwich</h2>
+      <section class="hotels-container">
+        <!-- <a href="./hotel-page.html">Hotel page</a>
         <a href="./form-page.html">Form page</a>
-        <a href="./confirmation-page.html">Confirmation page</a>
-        <div>
+        <a href="./confirmation-page.html">Confirmation page</a> -->
+        <div class="hotel-card">
           <a href="./hotel-page.html?hotelId=1">
-            <img src="./src/assets/maids head.png" alt="" />
+            <img
+              src="./src/assets/elm-house.png"
+              alt="The outside of The Elm House Hotel"
+              class="card-img"
+            />
           </a>
-          <p>Maids Head</p>
-          <p>20 Tombland, Norwich NR3 1LB</p>
-          <p>Rating: 4.5</p>
+          <div class="card-title-container">
+            <p class="card-title">The Elm House Hotel</p>
+            <p class="card-rating"><i class="fa-solid fa-star"></i>4</p>
+          </div>
+          <p class="card-address">24 Chapelfield Road, Norwich</p>
         </div>
-        <div>
+        <div class="hotel-card">
           <a href="./hotel-page.html?hotelId=2">
-            <img src="./src/assets/wilkinson's.png" alt="" />
+            <img
+              src="./src/assets/copper-stag.png"
+              alt="The outside of the Copper Stag Inn"
+              class="card-img"
+            />
           </a>
-          <p>Wilkinson's</p>
-          <p>24 Chapelfield Road, Norwich NR2 1SF</p>
-          <p>Rating: 3.8</p>
+          <div class="card-title-container">
+            <p class="card-title">The Copper Stag Inn</p>
+            <p class="card-rating"><i class="fa-solid fa-star"></i> 3.8</p>
+          </div>
+          <p class="card-address">83 King Street, Norwich</p>
         </div>
-        <div>
+        <div class="hotel-card">
           <a href="./hotel-page.html?hotelId=3">
-            <img src="./src/assets/louise marcheshi.png" alt="" />
+            <img
+              src="./src/assets/lace-mill.png"
+              alt="The outside of the Lace Mill Boutique Hotel"
+              class="card-img"
+            />
           </a>
-          <p>Louis Marcheshi</p>
-          <p>12 St Benedict’s Street, Norwich NR2 4AQ</p>
-          <p>Rating: 3.2</p>
+          <div class="card-title-container">
+            <p class="card-title">The Lace Mill Boutique Hotel</p>
+            <p class="card-rating"><i class="fa-solid fa-star"></i> 3.2</p>
+          </div>
+          <p class="card-address">12 St Benedict's Street, Norwich</p>
         </div>
-        <div>
+        <div class="hotel-card">
           <a href="./hotel-page.html?hotelId=4">
-            <img src="./src/assets/The Meridian Hotel.jpg" alt="" />
+            <img
+              src="./src/assets/wensum-spa.jpg"
+              alt="The outsude of the Wensum View Hotel"
+              class="card-img"
+            />
           </a>
-          <p>Meridian Hotel</p>
-          <p>42 Thorpe Road, Norwich NR1 1RY</p>
-          <p>Rating: 4.8</p>
+          <div class="card-title-container">
+            <p class="card-title">Wensum View Hotel & Spa</p>
+            <p class="card-rating"><i class="fa-solid fa-star"></i> 4.8</p>
+          </div>
+
+          <p class="card-address">5 Wensum Riverside Way, Norwich</p>
         </div>
-        <div>
+        <div class="hotel-card">
           <a href="./hotel-page.html?hotelId=5">
-            <img src="./src/assets/colony.jpg" alt="" />
+            <img
+              src="./src/assets/meridian-hotel.jpg"
+              alt="The outside of the Meridian Hotel"
+              class="card-img"
+            />
           </a>
-          <p>Colony Hotel</p>
-          <p>3 Bluebell Road, Norwich NR4 7LW</p>
-          <p>Rating: 4.1</p>
+          <div class="card-title-container">
+            <p class="card-title">The Meridian Hotel</p>
+            <p class="card-rating"><i class="fa-solid fa-star"></i> 4.1</p>
+          </div>
+          <p class="card-address">42 Thorpe Road, Norwich</p>
         </div>
-        <div>
+        <div class="hotel-card">
           <a href="./hotel-page.html?hotelId=6">
-            <img src="./src/assets/carlton.jpg" alt="" />
+            <img
+              src="./src/assets/golgen-orchard.jpg"
+              alt="The outside of the Golden Orchard Hotel"
+              class="card-img"
+            />
           </a>
-          <p>Carlton Hotel</p>
-          <p>5 Wensum Riverside Way, Norwich NR3 1TH</p>
-          <p>Rating: 3.9</p>
+          <div class="card-title-container">
+            <p class="card-title">The Golden Orchard Lodge</p>
+            <p class="card-rating"><i class="fa-solid fa-star"></i> 3.9</p>
+          </div>
+          <p class="card-address">3 Bluebell Road, Norwich</p>
         </div>
       </section>
     </main>
