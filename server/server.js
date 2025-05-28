@@ -9,13 +9,30 @@ import dotenv from "dotenv";
 const app = express();
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+
+
+// Add a CORS middleware
+app.use((req, res, next) => {
+    // Allow requests from multiple origins
+    const allowedOrigins = ['http://127.0.0.1:5503', 'http://localhost:5173'];
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+  
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
+  
+
+// app.use(
+//   cors({
+//     origin: ["http://localhost:5173","http://localhost:5503"],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
 
 dotenv.config();
 
@@ -47,7 +64,7 @@ app.post("/newBooking", async function (req, res) {
     customer_phone,
     customer_email,
     check_in,
-    check_out, booking_notes) VALUES($1, $2, $3, $4, $5, $6, $7)`,
+    check_out, booking_notes) VALUES($1, $2, $3, $4, $5, $6, $7)RETURNING *`,
     [
       body.hotel_name,
       body.customer_name,
@@ -66,9 +83,27 @@ app.post("/newBooking", async function (req, res) {
 
 //setting up a route to READ data from the database
 
-app.get("/bookings", async (req, res) => {
-  // query database
-  const query = await db.query(`SELECT * FROM bookings`);
-  //parse the query into JSON
-  const data = res.json(query.rows);
-});
+// app.get("/newBooking", async (req, res) => {
+//   // query database
+//   const query = await db.query(`SELECT * FROM bookings ORDER BY id`);
+//   //parse the query into JSON
+//   const data = res.json(query.rows);
+// });
+
+
+// GET route for the most recent booking
+app.get('/newBooking/latest', async (req, res) => {
+    
+      const result = await db.query('SELECT * FROM bookings ORDER BY id DESC LIMIT 1');
+      res.json(result.rows[0]);
+    
+  });
+  
+
+
+// //to get a confirmation message with booking detials
+
+// app.get("/bookings", async (req, res) => {
+//     const result = await db.query("SELECT * FROM bookings ORDER BY id");
+//     res.json(result.rows);
+//   });
