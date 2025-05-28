@@ -1,4 +1,6 @@
 :root {
+  --primary-color: #bbfe71;
+  --secondary-color: #0b4fb3;
   /* neutrals */
   --grey-1: #1a1a1a;
   --grey-2: #2e2e2e;
@@ -57,6 +59,17 @@ h2 {
   font-weight: 500;
 }
 
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
 .card-title {
   font-size: 16px;
   font-weight: 600;
@@ -106,12 +119,12 @@ h2 {
 }
 
 .fa-star {
-  color: #0b4fb3;
+  color: var(--secondary-color);
 }
 
 .hotel-img {
-  width: 42dvw;
-  height: 25dvh;
+  width: 100%;
+  height: 40dvh;
   object-fit: cover;
   border-radius: 20px;
   margin-bottom: 0.5rem;
@@ -121,8 +134,78 @@ footer {
   display: flex;
   justify-content: center;
   padding: 2rem;
-  background-color: #0b4fb3;
+  background-color: var(--secondary-color);
   color: white;
   font-family: inter;
   font-weight: 600;
+}
+
+.hotel-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.hotel-address {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.hotel-address p:first-of-type {
+  color: var(--grey-4, #6e6e6e);
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hotel-address p:last-of-type {
+  color: var(--grey-3);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+button {
+  display: flex;
+  padding: 12px 10px;
+  position: fixed;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--grey-2, #2e2e2e);
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 90%;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  border-top: 1px solid var(--grey-7);
+  z-index: 10;
+}
+
+.amenities-container {
+  padding-bottom: 2rem;
+}
+
+.description-container {
+  padding-bottom: 2rem;
 }
