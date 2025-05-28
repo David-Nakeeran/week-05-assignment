@@ -20,15 +20,27 @@ const submitHandler = async (e) => {
 
   const formValues = Object.fromEntries(formData);
 
-  await fetch(`${baseUrl}/newBooking`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formValues),
-  });
-  form.reset();
+  try {
+    const response = await fetch(`${baseUrl}/newBooking`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValues),
+    });
+    form.reset();
 
-  window.location.href = `confirmation-page.html?hotelId=${selectedHotel.id}`;
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error.message);
+    }
+
+    const bookingId = result.data.id;
+
+    window.location.href = `confirmation-page.html?bookingId=${bookingId}`;
+  } catch (error) {
+    console.error("Booking failed:", error.message);
+  }
 };
 form.addEventListener("submit", submitHandler);
