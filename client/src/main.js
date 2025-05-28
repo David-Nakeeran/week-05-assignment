@@ -26,14 +26,16 @@ const createHotelDetail = (object) => {
   const hotelDescription = document.createElement("p");
   const bookNowBtn = document.createElement("button");
 
-  //   hotelImg.src = object.src needs to be done
-  //   hotelImg.alt = object.alt needs to be done
-  // Classes need to be added
+  hotelImg.src = object.src;
+  hotelImg.alt = object.alt;
   console.log(object.hotelName);
   hotelNamePara.textContent = object.hotelName;
   hotelAddressPara.textContent = object.address;
   hotelRating.textContent = object.rating;
   hotelPrice.textContent = object.price;
+
+  // Classes
+  hotelImg.classList.add("hotel-img");
 
   hotelAmenitiesHeader.textContent = "Amenities";
   hotelAmenitiesPara.textContent = object.amenities;
