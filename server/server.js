@@ -9,7 +9,13 @@ import dotenv from "dotenv";
 const app = express();
 app.use(express.json());
 
-app.use(cors);
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 dotenv.config();
 
@@ -21,8 +27,8 @@ const db = new pg.Pool({
 
 // creating the server port
 
-app.listen(5000, () => {
-  console.log("server is working on port 5000");
+app.listen(8080, () => {
+  console.log("server is working on port 8080");
 });
 
 //root route of the server
@@ -33,9 +39,9 @@ app.get("/", (req, res) => {
 
 // POST route
 
-app.post("/newBooking", function (req, res) {
+app.post("/newBooking", async function (req, res) {
   const body = req.body;
-  const query = db.query(
+  const query = await db.query(
     `INSERT INTO bookings ( hotel_name,
     customer_name,
     customer_phone,
@@ -52,7 +58,10 @@ app.post("/newBooking", function (req, res) {
       body.booking_notes,
     ]
   );
-  res.json(query);
+  res.status(201).json({
+    success: true,
+    data: query.rows[0],
+  });
 });
 
 //setting up a route to READ data from the database
