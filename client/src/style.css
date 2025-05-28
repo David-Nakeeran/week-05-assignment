@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: inter;
+  font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -107,6 +107,14 @@ h2 {
 
 .fa-star {
   color: #0b4fb3;
+}
+
+.hotel-img {
+  width: 42dvw;
+  height: 25dvh;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
 }
 
 footer {
