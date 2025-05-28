@@ -1,5 +1,6 @@
+//to ensure the DOM is loaded and ready as soon as the page is opened ==> utilized the "DOMContentLoaded"
 window.addEventListener("DOMContentLoaded", async () => {
-    const response = await fetch("http://localhost:8080/newBooking/latest");
+    const response = await fetch("http://localhost:8080/newBooking/latest"); //link to the query to get latest addition to the table 
     const bookings = await response.json();
   
     const summary = document.getElementById("booking-summary");

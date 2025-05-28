@@ -100,10 +100,3 @@ app.get('/newBooking/latest', async (req, res) => {
   });
   
 
-
-// //to get a confirmation message with booking detials
-
-// app.get("/bookings", async (req, res) => {
-//     const result = await db.query("SELECT * FROM bookings ORDER BY id");
-//     res.json(result.rows);
-//   });
