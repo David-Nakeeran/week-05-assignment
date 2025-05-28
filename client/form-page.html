@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="module" src="./src/form.js" defer></script>
     <title>Form page</title>
   </head>
   <body>
@@ -13,13 +15,13 @@
       <form>
         <fieldset>
           <legend>Hotel Reservation</legend>
-          <input id="hotel-name" type="text" required hidden />
+          <input id="hotel-name" name="hotel_name" type="text" hidden />
 
-          <label for="customer_name">First name</label>
+          <label for="customer_name">Name</label>
           <input type="text" name="customer_name" required />
           <label for="customer_phone">Phone</label>
           <input type="phone" name="customer_phone" required />
-          <label for="customer_email">customer email</label>
+          <label for="customer_email">Email</label>
           <input type="email" name="customer_email" required />
           <label for="check_in">Check in</label>
           <input type="date" name="check_in" required />
