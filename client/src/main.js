@@ -97,6 +97,7 @@ const createHotelDetail = (object) => {
   //   hotelImg.src = object.src needs to be done
   //   hotelImg.alt = object.alt needs to be done
   // Classes need to be added
+  console.log(object.hotelName);
   hotelNamePara.textContent = object.hotelName;
   hotelAddressPara.textContent = object.address;
   hotelRating.textContent = object.rating;
@@ -126,6 +127,12 @@ const createHotelDetail = (object) => {
     hotelDescription,
     bookNowBtn
   );
+  hotelDetails.append(hotelBasicContainer);
+
+  // Event Listener
+  bookNowBtn.addEventListener("click", () => {
+    window.location.href = `form-page.html?hotelId=${object.id}`;
+  });
 };
 
 // Loop through array
