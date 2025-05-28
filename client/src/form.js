@@ -28,5 +28,7 @@ const submitHandler = async (e) => {
     body: JSON.stringify(formValues),
   });
   form.reset();
+
+  window.location.href = `confirmation-page.html?hotelId=${selectedHotel.id}`;
 };
 form.addEventListener("submit", submitHandler);
