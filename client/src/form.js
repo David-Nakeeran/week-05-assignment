@@ -52,9 +52,7 @@ const submitHandler = async (e) => {
       throw new Error(result.error.message);
     }
 
-    const bookingId = result.data.id;
-
-    window.location.href = `confirmation-page.html?bookingId=${bookingId}`;
+    window.location.href = `confirmation-page.html`;
   } catch (error) {
     console.error("Booking failed:", error.message);
   }
