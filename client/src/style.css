@@ -26,6 +26,14 @@ body {
   color: var(--grey-1);
 }
 
+@media (width >= 992px) {
+  .hotel-main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
 header {
   /* grid-column: 2/3; */
   /* grid-row: 2; */
@@ -34,19 +42,29 @@ header {
   margin: 40px 20px 0 20px;
   padding-bottom: 1.5rem;
 }
+@media (width >= 992px) {
+  header {
+    margin: 40px 120px 0 120px;
+    padding-bottom: 3rem;
+  }
+}
 
 .main-title {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 2rem;
-  /* grid-column: 2/3;
-  grid-row: 2/3; */
 }
 
 main {
   display: flex;
   flex-direction: column;
   margin: 0 20px;
+}
+
+@media (width >= 992px) {
+  main {
+    margin: 0 120px;
+  }
 }
 
 h1 {
@@ -58,16 +76,32 @@ h2 {
   font-size: 34px;
   font-weight: 500;
 }
+@media (width >= 992px) {
+  h2 {
+    font-size: 48px;
+  }
+}
 
 h3 {
   font-size: 24px;
   font-weight: 600;
+}
+@media (width >= 992px) {
+  h3 {
+    font-size: 34px;
+  }
 }
 
 h4 {
   font-size: 16px;
   font-weight: 600;
   padding-bottom: 1rem;
+}
+
+@media (width >= 992px) {
+  h4 {
+    font-size: 18px;
+  }
 }
 
 .card-title {
@@ -86,7 +120,14 @@ h4 {
   justify-content: space-between;
   width: 100%;
   gap: 1.2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
+}
+
+@media (width >= 992px) {
+  .hotel-main-container {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .hotel-card {
@@ -118,6 +159,12 @@ h4 {
   gap: 0.2rem;
 }
 
+@media (width >= 992px) {
+  .card-rating {
+    font-size: 16px;
+  }
+}
+
 .fa-star {
   color: var(--secondary-color);
 }
@@ -138,6 +185,7 @@ footer {
   color: white;
   font-family: inter;
   font-weight: 600;
+  width: 100%;
 }
 
 .hotel-title-container {
@@ -151,7 +199,7 @@ footer {
 .hotel-address {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
   gap: 1rem;
   padding-bottom: 2rem;
 }
@@ -173,10 +221,6 @@ footer {
 button {
   display: flex;
   padding: 12px 10px;
-  position: fixed;
-  bottom: 3%;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 20;
   justify-content: center;
   align-items: center;
@@ -188,20 +232,31 @@ button {
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
-  width: 90%;
-}
-
-.button-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  height: 5rem;
-  background-color: white;
-  border-top: 1px solid var(--grey-7);
-  z-index: 10;
+  margin-bottom: 2rem;
 }
 
-.amenities-container .description-container {
+button:hover {
+  cursor: pointer;
+}
+
+.amenities-container,
+.description-container {
   padding-bottom: 2rem;
+}
+
+@media (width >= 992px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+@media (width >= 992px) {
+  .main-info-container {
+    min-width: 30dvw;
+  }
+}
+
+.basic-info-container {
+  margin-bottom: 5rem;
 }

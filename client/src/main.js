@@ -17,6 +17,8 @@ const createHotelDetail = (object) => {
   const amenitiesContainer = document.createElement("div");
   const descriptionContainer = document.createElement("div");
   const buttonContainer = document.createElement("div");
+  const mainInfoContainer = document.createElement("div");
+  const basicInfoContainer = document.createElement("div");
   const hotelImg = document.createElement("img");
   const hotelNamePara = document.createElement("h3");
   const hotelAddressPara = document.createElement("p");
@@ -47,6 +49,8 @@ const createHotelDetail = (object) => {
   buttonContainer.classList.add("button-container");
   amenitiesContainer.classList.add("amenities-container");
   descriptionContainer.classList.add("description-container");
+  basicInfoContainer.classList.add("basic-info-container");
+  mainInfoContainer.classList.add("main-info-container");
 
   hotelAmenitiesHeader.textContent = "Amenities";
   hotelAmenitiesPara.textContent = object.amenities;
@@ -62,19 +66,17 @@ const createHotelDetail = (object) => {
   hotelRating.prepend(hotelStars);
   hotelTitleContainer.append(hotelNamePara, hotelRating);
   hotelAddressContainer.append(hotelAddressPara, hotelPrice);
-  amenitiesContainer.append(hotelAmenitiesHeader, hotelAmenitiesPara);
-  descriptionContainer.append(hotelDescriptionHeader, hotelDescription);
-
-  hotelBasicContainer.append(
+  mainInfoContainer.append(
     hotelImg,
     hotelTitleContainer,
     hotelAddressContainer,
-    amenitiesContainer,
-    descriptionContainer,
-    buttonContainer
+    bookNowBtn
   );
+  amenitiesContainer.append(hotelAmenitiesHeader, hotelAmenitiesPara);
+  descriptionContainer.append(hotelDescriptionHeader, hotelDescription);
+  basicInfoContainer.append(amenitiesContainer, descriptionContainer);
+  hotelBasicContainer.append(mainInfoContainer, basicInfoContainer);
   hotelDetails.append(hotelBasicContainer);
-  buttonContainer.append(bookNowBtn);
 
   // Event Listener
   bookNowBtn.addEventListener("click", () => {
