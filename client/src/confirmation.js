@@ -14,10 +14,10 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const div = document.createElement("div");
     div.innerHTML = `
-        <h3>Hotel: ${bookings.hotel_name}</h3>
-        <p>Customer: ${bookings.customer_name}</p>
-        <p>Check-in: ${bookings.check_in}</p>
-        <p>Check-out: ${bookings.check_out}</p>
+        <h3>Hotel: ${bookings.data.hotel_name}</h3>
+        <p>Customer: ${bookings.data.customer_name}</p>
+        <p>Check-in: ${bookings.data.check_in}</p>
+        <p>Check-out: ${bookings.data.check_out}</p>
       `;
     summary.appendChild(div);
   } catch (error) {
