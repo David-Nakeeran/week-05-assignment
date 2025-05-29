@@ -177,6 +177,13 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
+.hotel-page-body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  justify-content: space-between;
+}
+
 footer {
   display: flex;
   justify-content: center;
