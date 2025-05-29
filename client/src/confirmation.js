@@ -8,7 +8,7 @@ const selectedHotel = hotels.find((hotel) => hotel.id === hotelId);
 
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("http://localhost:8080/newBooking/latest"); //link to the query to get latest addition to the table
+    const response = await fetch("https://week-05-assignment-server.onrender.com/newBooking/latest"); //link to the query to get latest addition to the table
 
     const bookings = await response.json();
 
