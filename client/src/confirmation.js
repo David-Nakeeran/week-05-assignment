@@ -41,14 +41,10 @@ window.addEventListener("DOMContentLoaded", async () => {
     const summary = document.getElementById("booking-summary");
     summary.innerHTML = ""; // Clear old content
 
-
-    
-
     const div = document.createElement("div");
     div.innerHTML = `
         <p class="confirmation-para">Your booking summary:</p>
         `;
-
 
     const hotelDetails = document.createElement("div");
     hotelDetails.className = "hotelDetails";
@@ -59,15 +55,15 @@ window.addEventListener("DOMContentLoaded", async () => {
     const nameDateDetails = document.createElement("div");
     nameDateDetails.className = "nameDateDetails";
     nameDateDetails.innerHTML = `
-        <p>Customer: ${bookings.data.customer_name}</p>
-        <p>Check-in: ${checkInDate}</p>
-        <p>Check-out: ${checkOutDate}</p>
+        <p><strong>Customer:</strong> ${bookings.data.customer_name}</p>
+        <p><strong>Check-in:</strong> ${checkInDate}</p>
+        <p><strong>Check-out:</strong> ${checkOutDate}</p>
         
       `;
-      const notes = document.createElement("div");
-      notes.className = "notes";
-      notes.innerHTML = `
-      <p>Notes: ${bookings.data.booking_notes}</p>`;
+    const notes = document.createElement("div");
+    notes.className = "notes";
+    notes.innerHTML = `
+      <p><strong>Notes:</strong> ${bookings.data.booking_notes}</p>`;
 
     summary.appendChild(div);
     summary.appendChild(hotelDetails);
