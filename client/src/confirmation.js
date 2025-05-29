@@ -41,16 +41,38 @@ window.addEventListener("DOMContentLoaded", async () => {
     const summary = document.getElementById("booking-summary");
     summary.innerHTML = ""; // Clear old content
 
+
+    
+
     const div = document.createElement("div");
     div.innerHTML = `
         <p class="confirmation-para">Your booking summary:</p>
-        <h3>Hotel: ${bookings.data.hotel_name}</h3>
-        <p>${selectedHotel.address}</p>
+        `;
+
+
+    const hotelDetails = document.createElement("div");
+    hotelDetails.className = "hotelDetails";
+    hotelDetails.innerHTML = `
+      <h3>${bookings.data.hotel_name}</h3>
+        <p>${selectedHotel.address}</p>`;
+
+    const nameDateDetails = document.createElement("div");
+    nameDateDetails.className = "nameDateDetails";
+    nameDateDetails.innerHTML = `
         <p>Customer: ${bookings.data.customer_name}</p>
         <p>Check-in: ${checkInDate}</p>
         <p>Check-out: ${checkOutDate}</p>
+        
       `;
+      const notes = document.createElement("div");
+      notes.className = "notes";
+      notes.innerHTML = `
+      <p>Notes: ${bookings.data.booking_notes}</p>`;
+
     summary.appendChild(div);
+    summary.appendChild(hotelDetails);
+    summary.appendChild(nameDateDetails);
+    summary.appendChild(notes);
   } catch (error) {
     console.error("Booking confirmation failed:", error.message);
   }
