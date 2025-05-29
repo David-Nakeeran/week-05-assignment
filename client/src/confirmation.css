@@ -39,3 +39,18 @@
   border-bottom: 1px solid var(--grey-7);
   padding-top: 1rem;
 }
+.nameDateDetails p:first-of-type {
+  border-top: 1px solid var(--grey-7);
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--grey-7);
+  margin-top: 2rem;
+}
+
+.notes {
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.confirmation-para {
+  padding-bottom: 1rem;
+}
