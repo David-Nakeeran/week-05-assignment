@@ -109,9 +109,21 @@ h4 {
   font-weight: 600;
 }
 
+@media (width >= 992px) {
+  .card-title {
+    font-size: 20px;
+  }
+}
+
 .card-address {
   font-size: 12px;
   color: var(--grey-3);
+}
+
+@media (width >= 992px) {
+  .card-address {
+    font-size: 14px;
+  }
 }
 
 .hotels-container {
@@ -121,6 +133,12 @@ h4 {
   width: 100%;
   gap: 1.2rem;
   padding-bottom: 3rem;
+}
+
+@media (width >= 992px) {
+  .hotels-container {
+    gap: 3rem;
+  }
 }
 
 @media (width >= 992px) {
@@ -142,6 +160,22 @@ h4 {
   object-fit: cover;
   border-radius: 20px;
   margin-bottom: 0.5rem;
+}
+
+@media (width >= 992px) {
+  .card-img {
+    width: 35dvw;
+    height: 35dvh;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width >=1400px) {
+  .card-img {
+    width: 40dvw;
+    height: 35dvh;
+    margin-bottom: 1rem;
+  }
 }
 
 .card-title-container {
