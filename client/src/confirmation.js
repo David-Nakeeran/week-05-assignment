@@ -9,6 +9,23 @@ window.addEventListener("DOMContentLoaded", async () => {
       throw new Error(bookings.error.message);
     }
 
+
+    //converting the check_in date format to english so it's readable on the confirmation page
+
+    const checkInDate = new Date(bookings.data.check_in).toLocaleDateString("en-GB", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    //converting the check_out date format to english so it's readable on the confirmation page
+
+    const checkOutDate = new Date(bookings.data.check_out).toLocaleDateString("en-GB", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
     const summary = document.getElementById("booking-summary");
     summary.innerHTML = ""; // Clear old content
 
@@ -16,8 +33,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     div.innerHTML = `
         <h3>Hotel: ${bookings.data.hotel_name}</h3>
         <p>Customer: ${bookings.data.customer_name}</p>
-        <p>Check-in: ${bookings.data.check_in}</p>
-        <p>Check-out: ${bookings.data.check_out}</p>
+        <p>Check-in: ${checkInDate}</p>
+        <p>Check-out: ${checkOutDate}</p>
       `;
     summary.appendChild(div);
   } catch (error) {
