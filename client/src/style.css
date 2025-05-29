@@ -260,3 +260,7 @@ button:hover {
 .basic-info-container {
   margin-bottom: 5rem;
 }
+
+a {
+  text-decoration: none;
+}
