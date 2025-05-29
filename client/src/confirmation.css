@@ -39,34 +39,3 @@
   border-bottom: 1px solid var(--grey-7);
   padding-top: 1rem;
 }
-
-.nameDateDetails p:first-of-type {
-  border-top: 1px solid var(--grey-7);
-  padding-top: 1rem;
-  border-bottom: 1px solid var(--grey-7);
-  margin-top: 2rem;
-}
-
-.notes {
-  padding-bottom: 2rem;
-  padding-top: 1rem;
-}
-
-.confirmation-para {
-  padding-bottom: 1rem;
-}
-/* 
-@media (min-width: 375px) {
-  .nameDateDetails {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .confirmation-congrats-para {
-    font-size: 1.25rem;
-  }
-
-  .confirmation-booking-summary {
-    font-size: 1rem;
-  }
-} */

@@ -4,7 +4,7 @@ import { hotels } from "./hotelsArray.js";
 const hotelBookingSummary = document.getElementById("hotel-booking-summary");
 const form = document.querySelector("form");
 
-const baseUrl = "http://localhost:8080";
+const baseUrl = "https://week-05-assignment-server.onrender.com";
 
 const params = new URLSearchParams(window.location.search);
 

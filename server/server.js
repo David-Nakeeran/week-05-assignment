@@ -10,18 +10,21 @@ const app = express();
 app.use(express.json());
 
 // Add a CORS middleware
-app.use((req, res, next) => {
-  // Allow requests from multiple origins
-  const allowedOrigins = ["http://127.0.0.1:5503", "http://localhost:5173"];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
+// app.use((req, res, next) => {
+// Allow requests from multiple origins
+//   const allowedOrigins = [
+//     "http://127.0.0.1:5503",
+//     "https://week-05-assignment-client.onrender.com",
+//   ];
+//   const origin = req.headers.origin;
+//   if (allowedOrigins.includes(origin)) {
+//     res.setHeader("Access-Control-Allow-Origin", origin);
+//   }
 
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
+//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//   next();
+// });
 
 // app.use(
 //   cors({
@@ -30,6 +33,9 @@ app.use((req, res, next) => {
 //     credentials: true,
 //   })
 // );
+
+// fix maybe
+app.use(cors());
 
 dotenv.config();
 
