@@ -31,7 +31,9 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const div = document.createElement("div");
     div.innerHTML = `
+        <p class="confirmation-para">Your booking summary:</p>
         <h3>Hotel: ${bookings.data.hotel_name}</h3>
+        <p>${bookings.data.address}</p>
         <p>Customer: ${bookings.data.customer_name}</p>
         <p>Check-in: ${checkInDate}</p>
         <p>Check-out: ${checkOutDate}</p>
