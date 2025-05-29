@@ -12,7 +12,7 @@ app.use(express.json());
 // Add a CORS middleware
 app.use((req, res, next) => {
   // Allow requests from multiple origins
-  const allowedOrigins = ["http://127.0.0.1:5503", "http://localhost:5173"];
+  const allowedOrigins = ["http://127.0.0.1:5503", "https://week-05-assignment-client.onrender.com/"];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);

@@ -45,6 +45,12 @@
   
 }
 
+footer{
+  width:fit-content;
+  margin-left: 18px;
+  border-radius: 20px;
+}
+
 @media (min-width: 375px) {
   .nameDateDetails {
     flex-direction: row;
