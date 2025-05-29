@@ -6,9 +6,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        hotel: resolve(__dirname, "hotel-page/index.html"),
-        form: resolve(__dirname, "form-page/index.html"),
-        confirmation: resolve(__dirname, "confirmation-page/index.html"),
+        hotel: resolve(__dirname, "hotel-page.html"),
+        form: resolve(__dirname, "form-page.html"),
+        confirmation: resolve(__dirname, "confirmation-page.html"),
       },
     },
   },
