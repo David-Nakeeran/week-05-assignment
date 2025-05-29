@@ -18,11 +18,16 @@ const createElements = (object) => {
   const hotelName = document.createElement("h3");
   const hotelRating = document.createElement("p");
   const hotelAddress = document.createElement("p");
+  const hotelStars = document.createElement("i");
 
   hotelName.textContent = object.hotelName;
   hotelRating.textContent = object.rating;
   hotelAddress.textContent = object.address;
+  hotelStars.classList.add("fa-solid", "fa-star");
+  hotelRating.classList.add("card-rating");
+  div.classList.add("hotel-title");
 
+  hotelRating.prepend(hotelStars);
   div.append(hotelName, hotelRating);
   hotelBookingSummary.append(div, hotelAddress);
 };
